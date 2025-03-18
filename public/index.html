@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Eevee - Let's Go!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeIn 1s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.5s;
+        }
+        .eevee-image {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .eevee-image:hover {
+            transform: scale(1.05);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #e6b800;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcc00;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .evolution {
+            display: none;
+            animation: fadeIn 0.5s;
+            margin-top: 20px;
+        }
+        .evolution img {
+            width: 100px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .evolution img:hover {
+            transform: scale(1.1);
+        }
+        .lets-go-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .lets-go-section h2 {
+            text-align: center;
+        }
+        .lets-go-image {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .button {
+                width: 100%;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Mundo do Eevee!</h1>
+    </header>
+    <div class="container">
+        <img src="https://img.pokemondb.net/artwork/large/eevee.jpg" alt="Eevee" class="eevee-image">
+        <h2>Sobre o Eevee</h2>
+        <p>Eevee é um Pokémon do tipo Normal, conhecido por sua capacidade de evoluir para várias formas diferentes, dependendo das condições. Ele é um Pokémon muito querido por fãs de todas as idades!</p>
+        <button class="button" onclick="toggleEvolution()">Ver Evoluções</button>
+        <div class="evolution" id="evolution">
+            <h3>Evoluções do Eevee:</h3>
+            <div>
+                <img src="https://img.pokemondb.net/artwork/large/vaporeon.jpg" alt="Vaporeon"> Vaporeon (água)
+                <img src="https://img.pokemondb.net/artwork/large/jolteon.jpg" alt="Jolteon"> Jolteon (eletricidade)
+                <img src="https://img.pokemondb.net/artwork/large/flareon.jpg" alt="Flareon"> Flareon (fogo)
+                <img src="https://img.pokemondb.net/artwork/large/espeon.jpg" alt="Espeon"> Espeon (psíquico)
+                <img src="https://img.pokemondb.net/artwork/large/umbreon.jpg" alt="Umbreon"> Umbreon (sombrio)
+                <img src="https://img.pokemondb.net/artwork/large/leafeon.jpg" alt="Leafeon"> Leafeon (grama)
+                <img src="https://img.pokemondb.net/artwork/large/glaceon.jpg" alt="Glaceon"> Glaceon (gelo)
+                <img src="https://img.pokemondb.net/artwork/large/sylveon.jpg" alt="Sylveon"> Sylveon (fada)
+            </div>
+        </div>
+        <div class="lets-go-section">
+            <h2>Pokémon Let's Go Eevee</h2>
+            <img src="https://img.pokemondb.net/artwork/large/eevee-lets-go.jpg" alt="Let's Go Eevee" class="lets-go-image">
+            <p>Pokémon Let's Go Eevee é um jogo que traz uma nova experiência de captura e batalha, permitindo que os jogadores interajam com Eevee de maneiras únicas. O jogo combina elementos clássicos com novas mecânicas, como o uso de Poké Ball Plus.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Pokémon Fan Page</p>
+    </footer>
+    <script>
+        function toggleEvolution() {
+            const evolutionDiv = document.getElementById('evolution');
+            if (evolutionDiv.style.display === 'none' || evolutionDiv.style.display === '') {
+                evolutionDiv.style.display = 'block';
+                evolutionDiv.classList.add('fadeIn');
+            } else {
+                evolutionDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
